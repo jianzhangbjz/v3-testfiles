@@ -1,0 +1,14 @@
+data:
+  broker-config: "registry:\n  - type: rhcc\n    name: rh\n    url:  https://registry.access.redhat.com\n
+    \   org:  \n    tag:  v3.7\n    white_list: [.*-apb$]\n\n  - type: local_openshift\n
+    \   name: localregistry\n    namespaces: ['openshift']\n    white_list: []\n\ndao:\n
+    \ etcd_host: asb-etcd.openshift-ansible-service-broker.svc\n  etcd_port: 2379\n
+    \ etcd_ca_file: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt\n
+    \ etcd_client_cert: /var/run/asb-etcd-auth/client.crt\n  etcd_client_key: /var/run/asb-etcd-auth/client.key\nlog:\n
+    \ stdout: true\n  level: info\n  color: true\nopenshift:\n  host: \"\"\n  ca_file:
+    \"\"\n  bearer_token_file: \"\"\n  sandbox_role: edit\n  image_pull_policy: IfNotPresent\n
+    \ keep_namespace: false\n  keep_namespace_on_error: true\nbroker:\n  dev_broker:
+    false\n  bootstrap_on_startup: true\n  refresh_interval: 60s\n  launch_apb_on_bind:
+    false\n  output_request: false\n  recovery: true\n  ssl_cert_key: /etc/tls/private/tls.key\n
+    \ ssl_cert: /etc/tls/private/tls.crt\n  auto_escalate: False\n  auth:\n    - type:
+    basic\n      enabled: false\n"
