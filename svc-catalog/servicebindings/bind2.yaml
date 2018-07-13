@@ -3,10 +3,10 @@ apiVersion: servicecatalog.k8s.io/v1beta1
 kind: ServiceBinding
 metadata:
   name: bind2
-  namespace: <%= project.name %>
+  namespace: "${INSTANCE_NAMESPACE}"
 spec:
   instanceRef:
-    name: <%= cb.prefix %>-postgresql-apb
+    name: "${INSTANCE_NAME}"
   secretTransforms:
   - addKey:
       key: "test2"

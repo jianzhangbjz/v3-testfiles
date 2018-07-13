@@ -1,13 +1,18 @@
 ---
-apiVersion: servicecatalog.k8s.io/v1beta1
-kind: ServiceBinding
+apiVersion: v1
+kind: Template
 metadata:
   name: bind1
-  namespace: <%= project.name %>
-spec:
-  instanceRef:
-    name: <%= cb.prefix %>-postgresql-apb
-  secretTransforms:
-  - addKey:
-      key: "test1"
-      stringValue: "redhat"
+objects:
+  - apiVersion: servicecatalog.k8s.io/v1beta1
+    kind: ServiceBinding
+    metadata:
+      name: bind1
+      namespace: "${INSTANCE_NAMESPACE}"
+    spec:
+      instanceRef:
+        name: "${INSTANCE_NAME}"
+      secretTransforms:
+      - addKey:
+          key: "test1"
+          stringValue: "redhat"
