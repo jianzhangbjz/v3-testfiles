@@ -1,0 +1,10 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: test-operator
+  namespace: openshift-operator-lifecycle-manager
+spec:
+  sourceType: grpc
+  image: quay.io/dongboyan77/operator-registry:latest
+  displayName: Test Operators
+  publisher: Test
