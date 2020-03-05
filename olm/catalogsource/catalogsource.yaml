@@ -2,6 +2,7 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: CatalogSource
 metadata:
   name: installed-community-global-operators
+  namespace: openshift-operators
 spec:
   configMap: installed-community-global-operators
   displayName: Community Operators
@@ -9,5 +10,5 @@ spec:
     base64data: ""
     mediatype: ""
   publisher: Community
-  sourceType: internal
+  sourceType: configmap
 
