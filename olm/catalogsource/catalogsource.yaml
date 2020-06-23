@@ -1,0 +1,12 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: qe-configmap
+spec:
+  configMap: qe-etcd-operator
+  displayName: QE Operators
+  icon:
+    base64data: ""
+    mediatype: ""
+  publisher: QE
+  sourceType: configmap
